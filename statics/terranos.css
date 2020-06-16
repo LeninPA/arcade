@@ -1,0 +1,32 @@
+.terrano{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.t1{
+  background-image: url("../statics/img/alien1.png");
+}
+.t2{
+  background-image: url("../statics/img/alien2.png");
+}
+.t3{
+  background-image: url("../statics/img/alien3.png");
+}
+.usr{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../statics/img/usr.png");
+  position: relative;
+  bottom: -65%;
+  left: 0%;
+}
+#tablero{
+  padding: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 80vw;
+  background-color: aquamarine;
+  align-content: flex-start;
+}
