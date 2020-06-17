@@ -9,16 +9,32 @@ function dispara(naveUsr) {
   $("#tablero").append(BalaUsr)
   // let condicion = true;
   setTimeout(function moverBala() {
+    let leftUsr = naveUsr.x;
+    let rightUsr = naveUsr.width + leftUsr;
+    console.log("UsrL: " + leftUsr);
+    console.log("UsrR: " + rightUsr);
+    let left = parseInt(BalaUsr.css("left"), 10);
+    let width = parseInt(BalaUsr.css("width"), 10);
+    let right = left + width;
+    console.log("BalaL: " + left);
+    console.log("BalaR: " + right);
     BalaUsr.removeClass("advertencia");
     BalaUsr.addClass("disparo");
+    if ((leftUsr < left && rightUsr > left) || (leftUsr < right && rightUsr > right)){
+      naveUsr.vidas--;
+      console.log("Correeeeeeeeeeeeeee")
+    }
     setTimeout(() => {
       console.log("uwupt2")
       BalaUsr.remove();
       if(naveUsr.vidas > 0){
         dispara(naveUsr);
       }
-    }, 500);
-  }, 1000);
+      else if (naveUsr.vidas == 0){
+        alert("Has perdido")
+      }
+    }, 1000);
+  }, 2000);
 }
 class Nave{
   constructor(x, y, tipo) {
@@ -44,6 +60,7 @@ class NaveUsr{
     this.vidas = 3;
     this.viva = true;
     this.disparo = false;
+    this.width = 0;
   }
   dispara(){
     console.log("plas, pium");
@@ -61,7 +78,6 @@ class Nivel{
     this.filas = new Array();
     this.cols = new Array();
     this.naves = new Array();
-    console.log(this.filas * this.cols)
     if ((this.nFilas * this.nCols) == (this.t1Num + this.t2Num + this.t3Num)){
       for (let i = 0; i < this.nFilas; i++){
         for (let j = 0; j < this.nCols; j++) {
@@ -130,6 +146,7 @@ let jugador = new NaveUsr()
 let naveUsrGraf = $("<div>");
 naveUsrGraf.addClass("usr");
 naveUsrGraf.css("width", tab1.widthN);
+jugador.width = tab1.widthN;
 naveUsrGraf.css("height", tab1.widthN);
 $("#tablero").append(naveUsrGraf);
 $(window).resize( () => {
@@ -142,8 +159,6 @@ $(document).keypress((event)=>{
   let left = parseInt(naveUsrGraf.css("left"), 10);
   if (event.key == 'a' || event.key == 'h'){
     let anterior = left - tabWidth/100;
-    console.log("Cond1:" + -padding);
-    console.log("anterior: " + anterior)
     if (anterior > -padding){
       naveUsrGraf.css("left", anterior + "px");
       jugador.x = anterior;
@@ -161,16 +176,12 @@ let velocidad = 2000;
 let direccion = 1;
 let boolDibNaves = true;
 setTimeout(function dibNaves() {
-  console.log("uwu")
   let v = $(window).width() / 100 * direccion;
   let topPos = parseInt($("#naves").css("top")) + 20;
   let left = parseInt($("#naves").css("left"), 10);
   let navesWidth = parseInt($("#naves").css("width"), 10);
   let tabWidth = parseInt($("#tablero").css("width"), 10);
   let padding = parseInt($("#tablero").css("padding"), 10);
-  console.log(left);
-  console.log(padding)
-  console.log(-padding + v)
   let pos = left + v;
   if (left + navesWidth >= tabWidth - v + padding){
     direccion = -1;
