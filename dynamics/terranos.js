@@ -1,6 +1,5 @@
 console.log("Xochipilli");
 
-
 class Nave{
   constructor(x, y, tipo) {
     this.x = x;
@@ -20,6 +19,13 @@ class Nave{
   }
   dispara () {
     console.log("pium, pium");
+  }
+  muerte(naveGraf){
+    if (this.viva){
+    naveGraf.removeClass("t" + this.tipo);
+    naveGraf.css("position", "absolute");
+    this.viva = false;
+    }
   }
 }
 class NaveUsr extends Nave{
@@ -118,6 +124,7 @@ $("#tablero").append(naveUsrGraf);
 $(window).resize( () => {
   window.location.reload();
 } )
+//Movimiento de usuario
 $(document).keypress((event)=>{
   if (event.key == 'a' || event.key == 'h'){
     let anterior = parseInt(naveUsrGraf.css("left"), 10) - parseInt(($("#tablero").css("width")), 10)/100;
@@ -130,7 +137,7 @@ $(document).keypress((event)=>{
       naveUsrGraf.css("left", anterior + "px");
   }
 })
-let velocidad = 1000;
+let velocidad = 2000;
 let direccion = 1;
 let boolDibNaves = true;
 setTimeout(function dibNaves() {
@@ -161,3 +168,5 @@ setTimeout(function dibNaves() {
     }
   }, velocidad);
 }, velocidad);
+//tab1.naves[0].muerte(navesGraf[tab1.naves[0].x][tab1.naves[0].y])
+//tab1.naves[1].muerte(navesGraf[tab1.naves[1].x][tab1.naves[1].y])
