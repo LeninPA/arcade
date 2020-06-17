@@ -1,3 +1,14 @@
+.bala{
+  position: relative;
+  width: 3vw;
+  height: 120%;
+}
+.advertencia{
+  background-color: chocolate;
+}
+.disparo{
+  background-color: #f3463a;
+}
 .terrano{
   background-size: contain;
   background-repeat: no-repeat;
@@ -30,11 +41,10 @@
   height: 80vw;
   background-color: aquamarine;
   align-content: flex-start;
+  overflow: hidden;
 }
 #naves{
   position: relative;
-  left: auto;
-  top: auto;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
