@@ -27,6 +27,7 @@ class NaveUsr extends Nave{
     super (x, y);
     this.vidas = 3;
     this.viva = true;
+    this.disparo = false;
   }
   dispara(){
     console.log("plas, pium");
@@ -106,7 +107,7 @@ for (let i = 0; i < tab1.cols; i++) {
         navesGraf[i][j].addClass("t" + elem.tipo);
       }
     })
-    $("#tablero").append(navesGraf[i][j]);
+    $("#naves").append(navesGraf[i][j]);
   }
 }
 let naveUsrGraf = $("<div>");
@@ -129,3 +130,34 @@ $(document).keypress((event)=>{
       naveUsrGraf.css("left", anterior + "px");
   }
 })
+let velocidad = 1000;
+let direccion = 1;
+let boolDibNaves = true;
+setTimeout(function dibNaves() {
+  console.log("uwu")
+  let v = $(window).width() / 100 * direccion;
+  let topPos = parseInt($("#naves").css("top")) + 20;
+  let left = parseInt($("#naves").css("left"), 10);
+  let navesWidth = parseInt($("#naves").css("width"), 10);
+  let tabWidth = parseInt($("#tablero").css("width"), 10);
+  let padding = parseInt($("#tablero").css("padding"), 10);
+  console.log(left);
+  console.log(padding)
+  console.log(-padding + v)
+  let pos = left + v;
+  if (left + navesWidth >= tabWidth - v + padding){
+    direccion = -1;
+    $("#naves").css("top", topPos + "px");
+  }
+  else if (left <= -padding - v) {
+    direccion = 1;
+    $("#naves").css("top", topPos + "px");
+  }else{
+    $("#naves").css("left", pos + "px");
+  }
+  setTimeout(() => {
+    if (boolDibNaves){
+      dibNaves();
+    }
+  }, velocidad);
+}, velocidad);

@@ -18,8 +18,8 @@
   background-position: center;
   background-image: url("../statics/img/usr.png");
   position: relative;
-  bottom: -65%;
-  left: 0%;
+  bottom: -55%;
+  left: 45%;
 }
 #tablero{
   padding: 5vw;
@@ -27,6 +27,17 @@
   flex-wrap: wrap;
   width: 80vw;
   height: 80vw;
+  background-color: aquamarine;
+  align-content: flex-start;
+}
+#naves{
+  position: relative;
+  left: auto;
+  top: auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
   background-color: aquamarine;
   align-content: flex-start;
 }
