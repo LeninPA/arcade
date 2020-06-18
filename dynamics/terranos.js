@@ -1,6 +1,28 @@
 console.log("Xochipilli");
-function dispara(naveUsr) {
-  let posLeft = Math.round(Math.random() * 109) - 19;
+function lectura_cookies(cookie) {
+  let c = document.cookie
+  let cookies = c.split(";");
+  let regex = new RegExp(cookie, "i");
+  for (indice in cookies) {
+    let coincidencia = cookies[indice].search(regex);
+    if (coincidencia > -1) {
+      var posCookie = indice;
+      break;
+    }
+    else {
+      var posCookie = -1;
+    }
+  }
+  if (posCookie != -1) {
+    let valor_cookie = cookies[posCookie].split("=")[1];
+    return valor_cookie
+  }
+  else {
+    return false
+  }
+}
+
+function dispara(naveUsr, puntuacion) {
   let BalaUsr = $("<div>");
   BalaUsr.addClass("bala");
   BalaUsr.addClass("advertencia");
@@ -12,35 +34,34 @@ function dispara(naveUsr) {
     let tabWidth = parseInt($("#tablero").css("width"), 10);
     let leftUsr = naveUsr.x;
     let rightUsr = naveUsr.width + leftUsr;
-    console.log("UsrL: " + leftUsr);
-    console.log("UsrR: " + rightUsr);
-    let left = parseInt(BalaUsr.css("left"), 10) + tabWidth * 0.14;
-    let width = parseInt(BalaUsr.css("width"), 10) - tabWidth * 0.03;
+    let left = parseInt(BalaUsr.css("left"), 10) + tabWidth * 0.13;
+    let width = parseInt(BalaUsr.css("width"), 10) - tabWidth * 0.05;
     let right = left + width;
-    console.log("BalaL: " + left);
-    console.log("BalaR: " + right);
     BalaUsr.removeClass("advertencia");
     BalaUsr.addClass("disparo");
-    if ((leftUsr < left && rightUsr > left) || (leftUsr < right && rightUsr > right)){
-      naveUsr.vidas--;
-      console.log("Correeeeeeeeeeeeeee")
-    }
     setTimeout(() => {
-      console.log("uwupt2")
-      BalaUsr.remove();
-      let ganar = verifGanar(tab1);
-      if(ganar){
-        alert("Has ganado uwu")
+      if ((leftUsr < left && rightUsr > left) || (leftUsr < right && rightUsr > right)){
+        $("#vida-" + naveUsr.vidas).remove();
+        naveUsr.vidas--;
       }
-      else{
-        if(naveUsr.vidas > 0){
-          dispara(naveUsr);
+      setTimeout(() => {
+        puntuacion++;
+        document.cookie = "scoreTerranos=" + puntuacion;
+        BalaUsr.remove();
+        let ganar = verifGanar(tab1);
+        if(ganar){
+          alert("Has ganado uwu")
         }
-        else if (naveUsr.vidas == 0){
-          alert("Has perdido")
+        else{
+          if(naveUsr.vidas > 0){
+            dispara(naveUsr, puntuacion);
+          }
+          else if (naveUsr.vidas == 0){
+            alert("Has perdido")
+          }
         }
-      }
-    }, 600);
+      }, 600);
+    }, 50);
   }, 1000);
 }
 
@@ -51,8 +72,8 @@ function verifGanar(tablero){
   let heightTab = parseInt($("#tablero").css("height"), 10) - tablero.widthN - padding;
   let boolGanar = false;
   let v1 = heightNaves + top
-  console.log("pos: " + v1);
-  console.log("lím: " + heightTab)
+  // console.log("pos: " + v1);
+  // console.log("lím: " + heightTab)
   if(heightNaves + top >= heightTab){
     boolGanar = true;
   }
@@ -139,8 +160,6 @@ class Tablero{
     this.fil = nivel.nFilas;
     this.naves = nivel.naves;
     this.widthN = (window.innerWidth*0.5)/this.cols;
-    console.log(this.widthN);
-  }
   calcWidth(){
     this.widthN = (window.innerWidth * 0.5) / this.cols;
     return this.widthN
@@ -148,9 +167,7 @@ class Tablero{
 }
 
 let nivel1 = new Nivel(4, 6, 10, 10, 4);
-console.log(nivel1.naves);
 let tab1 = new Tablero(nivel1);
-console.log(tab1.widthN);
 let navesGraf = new Array();
 for (let i = 0; i < tab1.cols; i++) {
   navesGraf[i] = new Array();
@@ -222,7 +239,7 @@ $(document).keypress((event) => {
       jugador.x = anterior;
     }
     if (empJuego) {
-      dispara(jugador);
+      dispara(jugador, 0, 0);
       iniciaNaves();
       empJuego = false;
     }
@@ -234,7 +251,7 @@ $(document).keypress((event) => {
       jugador.x = anterior;
     }
     if (empJuego) {
-      dispara(jugador);
+      dispara(jugador, 0, 0);
       iniciaNaves();
       empJuego = false;
     }

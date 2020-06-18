@@ -1,3 +1,6 @@
+:root{
+  text-align: center;
+}
 .bala{
   position: relative;
   width: 3vw;
@@ -42,6 +45,8 @@
   background-size: cover;
   align-content: flex-start;
   overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 }
 #naves{
   background-color: #00008b3a;
