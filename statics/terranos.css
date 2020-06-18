@@ -13,7 +13,6 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: aquamarine;
 }
 .t1{
   background-image: url("../statics/img/alien1.png");
@@ -30,7 +29,7 @@
   background-position: center;
   background-image: url("../statics/img/usr.png");
   position: relative;
-  bottom: -55%;
+  bottom: -62%;
   left: 45%;
 }
 #tablero{
@@ -39,16 +38,18 @@
   flex-wrap: wrap;
   width: 80vw;
   height: 80vw;
-  background-color: aquamarine;
+  background: url("../statics/img/milky_way_NASA.jpg");
+  background-size: cover;
   align-content: flex-start;
   overflow: hidden;
 }
 #naves{
+  background-color: #00008b3a;
+  justify-content: space-between;
   position: relative;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
   width: 80vw;
-  background-color: aquamarine;
   align-content: flex-start;
 }

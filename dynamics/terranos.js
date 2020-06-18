@@ -28,20 +28,36 @@ function dispara(naveUsr) {
     setTimeout(() => {
       console.log("uwupt2")
       BalaUsr.remove();
-      if(naveUsr.vidas > 0){
-        dispara(naveUsr);
+      let ganar = verifGanar(tab1);
+      if(ganar){
+        alert("Has ganado uwu")
       }
-      else if (naveUsr.vidas == 0){
-        alert("Has perdido")
+      else{
+        if(naveUsr.vidas > 0){
+          dispara(naveUsr);
+        }
+        else if (naveUsr.vidas == 0){
+          alert("Has perdido")
+        }
       }
     }, 600);
   }, 1000);
 }
 
-// function verifGanar(){
-//   let top = parseInt($("#naves").css("top"), 10);
-//   return boolGanar
-// }
+function verifGanar(tablero){
+  let top = parseInt($("#naves").css("top"), 10);
+  let heightNaves = parseInt($("#naves").css("height"), 10);
+  let padding = parseInt($("#naves").css("padding"), 10);
+  let heightTab = parseInt($("#tablero").css("height"), 10) - tablero.widthN - padding;
+  let boolGanar = false;
+  let v1 = heightNaves + top
+  console.log("pos: " + v1);
+  console.log("lím: " + heightTab)
+  if(heightNaves + top >= heightTab){
+    boolGanar = true;
+  }
+  return boolGanar
+}
 
 class Nave{
   constructor(x, y, tipo) {
@@ -131,7 +147,7 @@ class Tablero{
   }
 }
 
-let nivel1 = new Nivel(4, 5, 10, 5, 5);
+let nivel1 = new Nivel(4, 6, 10, 10, 4);
 console.log(nivel1.naves);
 let tab1 = new Tablero(nivel1);
 console.log(tab1.widthN);
@@ -163,7 +179,7 @@ $(window).resize( () => {
   window.location.reload();
 } )
 function iniciaNaves(){
-  let velocidad = 2000;
+  let velocidad = 500;
   let direccion = 1;
   let boolDibNaves = true;
   setTimeout(function dibNaves() {
@@ -185,7 +201,8 @@ function iniciaNaves(){
       $("#naves").css("left", pos + "px");
     }
     setTimeout(() => {
-      if (boolDibNaves){
+      boolDibNaves = verifGanar(tab1);
+      if (!boolDibNaves){
         dibNaves();
       }
     }, velocidad);
