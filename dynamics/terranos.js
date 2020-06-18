@@ -1,6 +1,6 @@
 console.log("Xochipilli");
 function dispara(naveUsr) {
-  let posLeft = Math.round(Math.random() * 107) - 19;
+  let posLeft = Math.round(Math.random() * 109) - 19;
   let BalaUsr = $("<div>");
   BalaUsr.addClass("bala");
   BalaUsr.addClass("advertencia");
@@ -9,12 +9,13 @@ function dispara(naveUsr) {
   $("#tablero").append(BalaUsr)
   // let condicion = true;
   setTimeout(function moverBala() {
+    let tabWidth = parseInt($("#tablero").css("width"), 10);
     let leftUsr = naveUsr.x;
     let rightUsr = naveUsr.width + leftUsr;
     console.log("UsrL: " + leftUsr);
     console.log("UsrR: " + rightUsr);
-    let left = parseInt(BalaUsr.css("left"), 10);
-    let width = parseInt(BalaUsr.css("width"), 10);
+    let left = parseInt(BalaUsr.css("left"), 10) + tabWidth * 0.14;
+    let width = parseInt(BalaUsr.css("width"), 10) - tabWidth * 0.03;
     let right = left + width;
     console.log("BalaL: " + left);
     console.log("BalaR: " + right);
@@ -33,9 +34,15 @@ function dispara(naveUsr) {
       else if (naveUsr.vidas == 0){
         alert("Has perdido")
       }
-    }, 1000);
-  }, 2000);
+    }, 600);
+  }, 1000);
 }
+
+// function verifGanar(){
+//   let top = parseInt($("#naves").css("top"), 10);
+//   return boolGanar
+// }
+
 class Nave{
   constructor(x, y, tipo) {
     this.x = x;
@@ -65,6 +72,9 @@ class NaveUsr{
   dispara(){
     console.log("plas, pium");
   }
+  // getZero(naveUsrGraf){
+  //   let a = naveUsrGraf.css("left", "0%");
+  // }
 }
 class Nivel{
   constructor(filNum, colNum, t1Num, t2Num, t3Num) {
@@ -152,53 +162,66 @@ $("#tablero").append(naveUsrGraf);
 $(window).resize( () => {
   window.location.reload();
 } )
+function iniciaNaves(){
+  let velocidad = 2000;
+  let direccion = 1;
+  let boolDibNaves = true;
+  setTimeout(function dibNaves() {
+    let v = $(window).width() / 100 * direccion;
+    let topPos = parseInt($("#naves").css("top")) + 20;
+    let left = parseInt($("#naves").css("left"), 10);
+    let navesWidth = parseInt($("#naves").css("width"), 10);
+    let tabWidth = parseInt($("#tablero").css("width"), 10);
+    let padding = parseInt($("#tablero").css("padding"), 10);
+    let pos = left + v;
+    if (left + navesWidth >= tabWidth - v + padding){
+      direccion = -1;
+      $("#naves").css("top", topPos + "px");
+    }
+    else if (left <= -padding - v) {
+      direccion = 1;
+      $("#naves").css("top", topPos + "px");
+    }else{
+      $("#naves").css("left", pos + "px");
+    }
+    setTimeout(() => {
+      if (boolDibNaves){
+        dibNaves();
+      }
+    }, velocidad);
+  }, velocidad);
+}
+
 //Eventos de teclas
-$(document).keypress((event)=>{
+let empJuego = true;
+$(document).keypress((event) => {
   let padding = parseInt(($("#tablero").css("padding")), 10);
   let tabWidth = parseInt(($("#tablero").css("width")), 10);
   let left = parseInt(naveUsrGraf.css("left"), 10);
-  if (event.key == 'a' || event.key == 'h'){
-    let anterior = left - tabWidth/100;
-    if (anterior > -padding){
+  if (event.key == 'a' || event.key == 'h') {
+    let anterior = left - tabWidth / 100;
+    if (anterior > -padding) {
       naveUsrGraf.css("left", anterior + "px");
       jugador.x = anterior;
     }
+    if (empJuego) {
+      dispara(jugador);
+      iniciaNaves();
+      empJuego = false;
+    }
   }
-  else if (event.key == 'd' || event.key == 'l'){
+  else if (event.key == 'd' || event.key == 'l') {
     let anterior = left + tabWidth / 100;
-    if (anterior < tabWidth - padding){
+    if (anterior < tabWidth - padding) {
       naveUsrGraf.css("left", anterior + "px");
       jugador.x = anterior;
+    }
+    if (empJuego) {
+      dispara(jugador);
+      iniciaNaves();
+      empJuego = false;
     }
   }
 })
-let velocidad = 2000;
-let direccion = 1;
-let boolDibNaves = true;
-setTimeout(function dibNaves() {
-  let v = $(window).width() / 100 * direccion;
-  let topPos = parseInt($("#naves").css("top")) + 20;
-  let left = parseInt($("#naves").css("left"), 10);
-  let navesWidth = parseInt($("#naves").css("width"), 10);
-  let tabWidth = parseInt($("#tablero").css("width"), 10);
-  let padding = parseInt($("#tablero").css("padding"), 10);
-  let pos = left + v;
-  if (left + navesWidth >= tabWidth - v + padding){
-    direccion = -1;
-    $("#naves").css("top", topPos + "px");
-  }
-  else if (left <= -padding - v) {
-    direccion = 1;
-    $("#naves").css("top", topPos + "px");
-  }else{
-    $("#naves").css("left", pos + "px");
-  }
-  setTimeout(() => {
-    if (boolDibNaves){
-      dibNaves();
-    }
-  }, velocidad);
-}, velocidad);
-dispara(jugador);
 //tab1.naves[0].muerte(navesGraf[tab1.naves[0].x][tab1.naves[0].y])
 //tab1.naves[1].dispara(navesGraf[tab1.naves[1].x][tab1.naves[1].y])
