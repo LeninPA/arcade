@@ -1,0 +1,58 @@
+@font-face{
+  font-family: 'domine';
+  src: url("../lib/fonts/Domine/Domine-Regular.ttf");
+}
+body{
+  margin: 2px;
+  font-family: "domine";
+  background-color: #4c58c4;
+  color: aliceblue;
+}
+#inicial{
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 200px;
+  height: 400px;
+}
+div.opciones{
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.si{
+  text-align: center;
+  font-size: 30px;
+  color: #ffffff;
+  float: left;
+  display: block;
+  margin-top: 5vh;
+}
+div.no{
+  text-align: center;
+  font-size: 30px;
+  color: #ffffff;
+  float: left;
+  display: block;
+  margin-top: 5vh;
+}
+a{
+  background-color: aqua;
+  border-radius: 50%;
+  box-shadow: 0 10px 0 green;
+  color: #a26fcc;
+  font-family: "Lobstaner cool";
+  font-size: 38px;
+  position: absolute;
+  text-decoration: none;
+  transition: all 0.6 ease;
+  padding: 20px;
+}
+a:hover{
+  background-color: rgb(245,119,4);
+  box-shadow: 0 4px 0 green;
+  margin-top: 6px;
+}
+p{
+  text-align: center;
+  font-size: xx-large;
+}

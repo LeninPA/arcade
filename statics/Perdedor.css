@@ -1,0 +1,55 @@
+@font-face{
+  font-family: 'oxygen';
+  src: url("../lib/fonts/Oxygen/Oxygen-Light.ttf");
+}
+body{
+  margin: 2px;
+  font-family: "oxygen";
+  background-color: #5f36a0;
+  color: aliceblue;
+}
+#inicial{
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 200px;
+  height: 400px;
+}
+div.opciones{
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+div.si{
+  text-align: center;
+  font-size: 30px;
+  color: #ffffff;
+  display: block;
+  margin-top: 5vh;
+}
+div.no{
+  text-align: center;
+  font-size: 30px;
+  color: #ffffff;
+  display: block;
+  margin-top: 5vh;
+}
+a{
+  background-color: aqua;
+  border-radius: 50%;
+  box-shadow: 0 10px 0 green;
+  color: #a26fcc;
+  font-size: large;
+  position: absolute;
+  text-decoration: none;
+  transition: all 0.6 ease;
+  padding: 20px;
+}
+a:hover{
+  background-color: rgb(245,119,4);
+  box-shadow: 0 4px 0 green;
+  margin-top: 6px;
+}
+p{
+  text-align: center;
+  font-size: xx-large;
+}
