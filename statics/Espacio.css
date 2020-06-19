@@ -3,7 +3,20 @@ body{
     grid-gap: 10px;
     grid-template-columns:  auto auto;
     grid-template-rows: auto;
+    background: #c6b1da;
 }
+button{
+    background-color: #36013F;
+    border: 3px solid #017A79;
+    border-radius: 1em 0;
+    padding: 1vh;
+    font-size: medium;
+    color: #fdfdfd;
+    transition: background-color 1s ease;
+}
+button:hover{
+    background-color: #7f5088;
+} 
 #letras{
     text-align: center;
     flex-direction: row;

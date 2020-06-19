@@ -12,7 +12,17 @@ button{
    display: block;
    margin-left: auto;
    margin-right: auto;
+    background-color: #36013F;
+    border: 3px solid #017A79;
+    border-radius: 1em 0;
+    padding: 1vh;
+    font-size: medium;
+    color: #fdfdfd;
+    transition: background-color 1s ease;
 }
+button:hover{
+    background-color: #7f5088;
+} 
 
 h1{
    text-align: center;
@@ -38,6 +48,7 @@ header {
 nav{
    text-align: right;
    padding: 30px 50px 0 0;
+   margin-bottom: 5vh;
 }
 /*Va a ser para nuestras etiquetas a y darles formato*/
 nav > a{
@@ -93,8 +104,8 @@ header .textos-header{
 }
 .card{
    border: 2px solid #eba613;
-   background-color: #c6b1da;
 }
 #logo{
    width: 40%;
+   max-width: 432px;
 }
