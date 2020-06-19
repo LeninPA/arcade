@@ -1,36 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-      <!--Hago utilidad de la etiqueta meta y que sea compatible, se puedeborrar-->
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>Coyo-express</title>
-      <!--Estos link son para el favicon el estilo y el tipo de letra-->
-      <link rel="shortcut icon" href="img/logo.png" type="image/png">
-      <link rel="stylesheet" href="../statics/css/estilos.css">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
+    <!--Hago utilidad de la etiqueta meta y que sea compatible, se puedeborrar-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Coyo-express</title>
+    <!--Estos link son para el favicon el estilo y el tipo de letra-->
+    <link rel="shortcut icon" href="img/logo.png" type="image/png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../statics/css/header.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap" rel="stylesheet">
   </head>
   <body>
-      <header>
-          <nav>
-              <a href="#Somoscoyotes">Inicio</a>
-              <a href="#Alimentos">Acerca de alimentos</a>
-              <a href="./Sesion/iniciarSesion.php"
-              >Ingreso</a>
-              <a href="#Servicios">Servicios</a>
-              <a href="#Contacto">Contacto</a>
-          </nav>
-          <section class="textos-header">
-              <h1>CoyoExpress</h1>
-              <h2>Cafeteria escolar</h2>
-          </section>
-          <!--Esta aparte sera para darle como un borde curveado-->
-          <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                  style="height: 100%; width: 100%;">
-                  <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                      style="stroke: none; fill: #fff;"></path>
-              </svg></div>
-      </header>
+    <header>
+        <nav>
+          <a href="#Somoscoyotes">Inicio</a>
+          <a href="#Alimentos">Acerca de alimentos</a>
+          <a href="./Sesion/iniciarSesion.php"
+          >Ingreso</a>
+          <a href="#Servicios">Servicios</a>
+          <a href="#Contacto">Contacto</a>
+        </nav>
+        <section class="textos-header">
+          <h1>CoyoExpress</h1>
+          <h2>Cafeteria escolar</h2>
+        </section>
+        <!--Esta aparte sera para darle como un borde curveado-->
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+    </header>
+    <div class="card-group">
+      <div class="card">
+        <img class="card-img-top" src="../../inicio/statics/img/captura_sirtet.png" alt="Card image cap">
+        <div class="card-body">
+          <h1 class="card-title">Sirtet</h1>
+          <p class="card-text">Un Tetris en donde pondrás tus habilidades a prueba conforme las piezas vayan cayendo. Diseñado solo para los mejores...
+            ¿podrás superar los 1000 puntos?
+            <h3>Instrucciones</h3>
+            Conforme van cayendo las piezas en el tablero, acomódalas moviéndote hacia ambos lados para llenar una fila y que esta
+            se rompa.<br>
+            No llenes ninguna columna, o tu juego terminará.
+            <h3>Controles</h3>
+            Desplázate a los lados con las flechas izquierda y derecha o acelera tu caída con la flecha abajo. Puedes pausar para
+            recargar energías con la tecla P.
+          </p>
+          <p class="card-text"><small class="text-muted">Come frutas y verduras</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../../inicio/statics/img/captura_terranos.png" alt="Card image cap">
+        <div class="card-body">
+          <h1 class="card-title">Terranos</h1>
+          <p class="card-text">
+            Desarmado y solitario, tú como píloto de la Xóchitl 6780-B debes de proteger
+            a los últimos sobrevivientes de la Tierra. Sobrevive a los golpes de los enemigos 
+            hasta que lleguen los refuerzos.
+            <h3>Instrucciones</h3>
+            
+            Evita los disparos enemigos hasta que lleguen las naves de refuerzo desplazándote
+            hacia la derecha o la izquierda. Cada disparo sobrevivido suma a la puntuación
+            <h3>Controles</h3>
+            Desplazate con las teclas a y h hacia la derecha, y con las teclas d y l hacia la
+            izquierda.
+          </p>
+          <p class="card-text"><small class="text-muted">Come frutas y verduras</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="../../inicio/statics/img/captura_breakout.png" alt="Card image cap">
+        <div class="card-body">
+          <h1 class="card-title">Breakout</h1>
+          <p class="card-text">El mundo esta siendo atacado por grande bloques alienigenas y salvar al mundo depende de ti, no podemos asegurar tu
+          supervivencia pero ya tu hablaras con tus actos, cuentas con una pelota que mas puedes pedir?...
+            <h3>Instrucciones</h3>
+            N O &nbsp;&nbsp; D E J E S &nbsp;&nbsp; Q U E &nbsp;&nbsp; L A &nbsp;&nbsp; P E L O T A &nbsp;&nbsp; C A I G A
+            <h3>Controles</h3>
+          </p>
+          <p class="card-text"><small class="text-muted">Come frutas y verduras</small></p>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
   </body>
 </html>

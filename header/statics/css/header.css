@@ -82,3 +82,6 @@ header .textos-header{
    bottom: 0;
    width: 100%;
 }
+.card{
+   border: 2px solid #eba613;
+}
