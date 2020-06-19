@@ -6,6 +6,21 @@ body {
   background: #000;
   overflow: hidden;
 }
+button{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+    background-color: #36013F;
+    border: 3px solid #017A79;
+    border-radius: 1em 0;
+    padding: 1vh;
+    font-size: medium;
+    color: #fdfdfd;
+    transition: background-color 1s ease;
+}
+button:hover{
+    background-color: #7f5088;
+} 
 /*Investigue y z-index indica el orden de un elemento posicionado y sus descendientes*/
 .intro {
   position: absolute;
@@ -28,7 +43,7 @@ Y ademas olcultaremos lso parrafos con top*/
   position: absolute;
   top: 80%;
 }
-/*Supweroponemos nuestrla calse parrafo y la centramos*/
+/*Superponemos nuestrla calse parrafo y la centramos*/
 .parrafos {
   position: absolute;
   left: 15%;
