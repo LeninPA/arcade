@@ -3,9 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./Espacio.css" type="text/css">
-        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
-        <script type="text/javascript" src="jquery_min.js"></script>
+        <link rel="stylesheet" href="../statics/Espacio.css" type="text/css">
+        <link rel="icon" type="image/png" sizes="32x32" href="../statics/img/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../statics/img/favicon_io/favicon-16x16.png">
+        <script type="text/javascript" src="../lib/jquery-3.5.1.min.js"></script>
         <script type="text/javascript" src="Espacio.js"></script>
         <title>Tetris</title>
     </head>
@@ -49,5 +50,6 @@
                 ?>
             </table>
         </div>
+        <button onclick="location.href='../templates/header.html'">Regresa al principio</button>
     </body>
 </html>

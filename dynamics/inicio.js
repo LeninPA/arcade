@@ -34,4 +34,3 @@ function animar() {
 }
 
 
-/*Fondo de estrellas*/

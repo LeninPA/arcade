@@ -120,7 +120,7 @@ function dispara(naveUsr, puntuacion) {
   BalaUsr.addClass("bala");
   BalaUsr.addClass("advertencia");
   BalaUsr.css("top", "-45%");
-  BalaUsr.css("left", 0 + "%");
+  BalaUsr.css("left", posLeft + "%");
   $("#tablero").append(BalaUsr)
   // Cambio de advertencia a disparo
   setTimeout(function disparoEnemigo() {

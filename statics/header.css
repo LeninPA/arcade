@@ -5,22 +5,18 @@
 }
 
 body {
-   font-family: 'open sans';
+   font-family: 'open sans', sans-serif;
+   background-color: #c6b1da;
+}
+button{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   background-color: ;
 }
 
-.contenedor {
-   padding: 60px 0;
-   width: 90%;
-   max-width: 1000px;
-   margin: auto;
-   overflow: hidden;
-}
-
-.titulo {
-   color: #642a73;
-   font-size: 30px;
+h1{
    text-align: center;
-   margin-bottom: 60px;
 }
 
 /* El Header */
@@ -30,11 +26,11 @@ header {
    background: #f12711;
    /*Aqui es un degradado donde puse la imgen de fondo*¨/
    /* fallback for old browsers */
-   background: -webkit-linear-gradient(to right, #f12711, #f5af19), url(../img/p6.jpg);
+   background: -webkit-linear-gradient(to right, #36013F, #8F8CE7);
    /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, hsla(6, 89%, 51%, 0.671), hsla(41, 92%, 53%, 0.661)), url(../img/p6.jpg);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+   background: linear-gradient(to right, #36013Fab, #8F8CE7a9);
+   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
    background-size: cover;
    background-attachment: fixed;
    position: relative;
@@ -66,6 +62,20 @@ header .textos-header{
    text-align: center;
 }
 /*Sera para nuestro titulo de en medio */
+.contenedor {
+   padding: 60px 0;
+   width: 90%;
+   max-width: 1000px;
+   margin: auto;
+   overflow: hidden;
+}
+
+.titulo {
+   color: #642a73;
+   font-size: 30px;
+   text-align: center;
+   margin-bottom: 60px;
+}
 .textos-header h1{
    font-size: 50px;
    color:#fff;
@@ -84,4 +94,8 @@ header .textos-header{
 }
 .card{
    border: 2px solid #eba613;
+   background-color: #c6b1da;
+}
+#logo{
+   width: 40%;
 }
