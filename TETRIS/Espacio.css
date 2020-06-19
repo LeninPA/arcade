@@ -1,0 +1,51 @@
+body{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns:  auto auto;
+    grid-template-rows: auto;
+}
+#letras{
+    text-align: center;
+    flex-direction: row;
+}
+#caja{
+    align-content: center;
+}
+#puntaje{
+    color: firebrick;
+    font-size: 40px;
+    font-family: Impact;
+    margin-top: 100px;
+    text-align: center;
+}
+#juego{
+    flex-direction: row;
+    padding: 30px;
+    text-align: center;
+}
+.celda{
+    height: 20px;
+    width: 20px;
+    background-color: #9a9c9b;
+}
+.I{
+    background-color: cyan;
+}
+.O{
+    background-color: yellow;
+}
+.T{
+    background-color: purple;
+}
+.S{
+    background-color: green;
+}
+.Z{
+    background-color: red;
+}
+.L{
+    background-color: orange;
+}
+.J{
+    background-color: blue;
+}
