@@ -1,2 +1,6 @@
 .DS_Store
 lib/fontawesome-free-5.13.0-web/css/Icon
+statics/img/favicon_io/apple-touch-icon.png
+statics/img/favicon_io/android-chrome-192x192.png
+statics/img/favicon_io/android-chrome-512x512.png
+statics/img/favicon_io/site.webmanifest

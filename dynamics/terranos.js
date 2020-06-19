@@ -120,7 +120,7 @@ function dispara(naveUsr, puntuacion) {
   BalaUsr.addClass("bala");
   BalaUsr.addClass("advertencia");
   BalaUsr.css("top", "-45%");
-  BalaUsr.css("left", posLeft + "%");
+  BalaUsr.css("left", 0 + "%");
   $("#tablero").append(BalaUsr)
   // Cambio de advertencia a disparo
   setTimeout(function disparoEnemigo() {
@@ -160,7 +160,7 @@ function dispara(naveUsr, puntuacion) {
           }
           else if (naveUsr.vidas == 0){
             //De lo contrario, se manda al otro sitio
-            alert("Has perdido")
+            window.location = "./score-terranos.html";
           }
         }
       }, 600);
@@ -179,6 +179,7 @@ function verifGanar(tablero){
   let boolGanar = false;
   if(heightNaves + top >= heightTab){
     boolGanar = true;
+    window.location = "./score-terranos.html";
   }
   return boolGanar
 }
