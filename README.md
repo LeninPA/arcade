@@ -40,8 +40,9 @@ Características:
     - El jugador tiene 3 vidas
     - Un disparo cae del cielo en una posición aleatoria 
     - Pierde una vida si se encuentra con un disparo
-  - Outbreak
+  - Breakout
     - Existe una pelota que rompe los bloques
+    - La pelota tiene 3 vidas
     - Cuenta con 3 niveles en donde la dificultad va aumentando
     - La pelota debe rebotar en la barra inferior, o perderá
     - Cuenta con sonido
