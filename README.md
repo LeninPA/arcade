@@ -1,4 +1,4 @@
-# Arcade coyotito
+# Arcade Coyotito
 
 <h2>Equipo: Los tres mosqueteros y Arantxa</h2>
 
@@ -48,5 +48,7 @@ Características:
     - Gana al completar todos los niveles
     
 Comentarios adicionales:
-La integración de base de datos, que incluyen el registro del usuario y puntajes no se completó porque un integrante no pudo colaborar en el proyecto. Sin embargo, implementamos lo que consideramos más necesario para un mínimo funcionamiento de la página.
+La integración de base de datos, que incluyen el registro del usuario y puntajes no se completó porque un integrante no pudo colaborar en el proyecto. Sin embargo, implementamos lo que consideramos más necesario para un mínimo funcionamiento de la página y fácil interfaz para el usuario.
+
+Esperamos puedan disfrutar de los juegos que programamos y  agradecemos a los instructores del Curso Web por habernos brindado los conocimientos con los que llevamos a cabo este proyecto.
   
