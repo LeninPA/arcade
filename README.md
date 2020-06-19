@@ -13,12 +13,12 @@ Este proyecto es un sitio Web en el que se encuentran 3 juegos distintos(un tetr
 
 Guía de instalación:
 Se deben adquirir los documentos de la rama master y descargarlos en la computadora en donde se desea accesar al arcade.
-Para ingresar a la página se debe iniciar en el documento inicio.html y a partir de ahí, las demás páginas funcionan correctamente.
+Para ingresar a la página se debe iniciar en el documento index.html y a partir de ahí, las demás páginas funcionan correctamente.
 Antes de abrir los documentos se debe iniciar el servidor "Xampp" en el caso de Windows o "Mamp" en el caso de Mac, y los documentos se deben guardar en la carpeta "htdocs".
-Para abrir el documento, en el navegador se debe escribir la ruta "localhost/templates/inicio.html"
+Para abrir el documento, en el navegador se debe escribir la ruta "localhost/templates/index.html".
 
 Guía de configuración:
-No requiere ninguna configuración adIcional.
+No requiere ninguna configuración adicional.
 
 Características:
 - Pantalla de primera vez
