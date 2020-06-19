@@ -1,0 +1,66 @@
+@font-face{
+  font-family: 'oxygen';
+  src: url("../lib/fonts/Oxygen/Oxygen-Light.ttf");
+}
+:root{
+  text-align: center;
+  background-color: #c6b0de;
+  font-family: 'oxygen';
+}
+.bala{
+  position: relative;
+  width: 3vw;
+  height: 120%;
+}
+.advertencia{
+  background-color: chocolate;
+}
+.disparo{
+  background-color: #f3463a;
+}
+.terrano{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.t1{
+  background-image: url("../statics/img/alien1.png");
+}
+.t2{
+  background-image: url("../statics/img/alien2.png");
+}
+.t3{
+  background-image: url("../statics/img/alien3.png");
+}
+.usr{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../statics/img/usr.png");
+  position: relative;
+  bottom: -62%;
+  left: 45%;
+}
+#tablero{
+  padding: 5vw;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  height: 80vw;
+  background: url("../statics/img/milky_way_NASA.jpg");
+  background-size: cover;
+  align-content: flex-start;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+}
+#naves{
+  background-color: #00008b3a;
+  justify-content: space-between;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80vw;
+  align-content: flex-start;
+}
