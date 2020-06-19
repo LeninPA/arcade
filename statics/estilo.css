@@ -1,7 +1,14 @@
 *{
     font-family: "Germania One";
-    background-image: url("../../../fondo.jpeg");
+    background: #c6b1da;
     background-attachment: fixed;
+}
+canvas{
+    display: block;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
 }
 #sound{
     width: 30px;
